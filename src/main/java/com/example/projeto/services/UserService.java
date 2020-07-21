@@ -13,14 +13,22 @@ import com.example.projeto.repositories.UserRespository;
 public class UserService {
 
 	@Autowired
-	private UserRespository respository;
+	private UserRespository repository;
 	
 	public List<User> findAll(){
-		return respository.findAll();
+		return repository.findAll();
 	}
 	
 	public User findById(Long id) {
-	    Optional<User> obj = respository.findById(id);
+	    Optional<User> obj = repository.findById(id);
 	    return obj.get();
+	}
+	
+	public User insert(User user) {
+		return repository.save(user);
+	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 }
