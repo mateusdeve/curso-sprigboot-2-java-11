@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.projeto.entities.User;
 import com.example.projeto.services.UserService;
+import com.example.projeto.services.exceptions.ResourceNotFoundException;
 
 @RestController
 @RequestMapping(value = "/users")
